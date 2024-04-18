@@ -6,6 +6,8 @@ def get_text(filepath):
     url = "http://127.0.0.1:1224/argv"
     headers = {"Content-Type": "application/json"}
     data = ["--path", filepath.replace("\\", "/")]
+    for i in range(5):
+        F5_url()
     try:
         response = requests.post(url, headers=headers, data=json.dumps(data))
         if response.status_code == 200:
@@ -20,3 +22,9 @@ def get_text(filepath):
 
 def get_text2(filepath):
     return filepath.replace("\\", "/")
+
+
+def F5_url():
+    url = 'http://127.0.0.1:1224/'
+    res = requests.get(url)
+    print(res)

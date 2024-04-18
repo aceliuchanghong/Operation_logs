@@ -8,4 +8,4 @@ with gr.Blocks() as demo:
     text = gr.Textbox()
     b1.click(get_text, inputs=img_file, outputs=text)
 
-demo.launch()
+demo.launch(share=False)

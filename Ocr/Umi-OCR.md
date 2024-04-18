@@ -65,7 +65,7 @@ except Exception as e:
 ### 吐槽
 
 ```text
-为什么这个图标怎么这么像老鼠脸..
+这个webui时慢时快,搞不懂
 ```
 
 ### Reference
