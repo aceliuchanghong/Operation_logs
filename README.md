@@ -18,7 +18,9 @@ Operation_logs/
 ├── requirements.txt
 └── Ocr/
     ├── Umi-OCR.md
-    └── ocr.py
+    ├── ocr.py
+    ├── ocr_web_ui.py
+    └── utils.py
 ```
 ### *Star History*
 ![Star History Chart](https://api.star-history.com/svg?repos=aceliuchanghong/Operation_logs&type=Date)
