@@ -8,4 +8,4 @@ git lfs version
 ```
 ###  克隆模型
 git lfs install
-git clone https://huggingface.co/Systran/faster-whisper-large-v3 /home/liuchanghong/faster-whisper-large-v3
+git clone https://huggingface.co/Systran/faster-whisper-large-v3 /home/liuchanghong/
