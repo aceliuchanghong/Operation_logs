@@ -3,7 +3,7 @@
 nvidia-smi
 # 以T为周期查看GPU使用情况：watch -n T nvidia-smi
 # 注意：命令行参数T表示执行命令的周期(单位：S)
-watch -n 30 nvidia-smi
+watch -n 1 nvidia-smi
 # 查看服务器是64位还是32位
 getconf LONG_BIT
 ```
