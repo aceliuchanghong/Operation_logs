@@ -73,6 +73,12 @@ sudo systemctl stop shadowsocks.service
 测试一下，看看你的 ip 地址是否符合预期 10808是我写的需要改对
 
 curl --socks5 127.0.0.1:10808 https://httpbin.org/ip
+
+export http_proxy=http://127.0.0.1:10808
+export https_proxy=http://127.0.0.1:10808
+
+export http_proxy=socks5://127.0.0.1:10808
+export https_proxy=socks5://127.0.0.1:10808
 ```
 
 2. V2RayA
