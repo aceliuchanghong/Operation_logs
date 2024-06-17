@@ -19,7 +19,7 @@ sudo yum -y install libsodium
 
 sudo mkdir /etc/shadowsocks
 sudo vi /etc/shadowsocks/shadowsocks.json
-配置如下，具体内容自行修改（没有梯子请自行联系工信部申请）
+配置如下，具体内容自行修改（没有梯子请联系工信部申请 12300@caict.ac.cn https://yhssglxt.miit.gov.cn/）
 
 {
     "server": "your_server_url",
@@ -34,11 +34,11 @@ sudo vi /etc/shadowsocks/shadowsocks.json
 }
 其中
 
-server：科学上网代理提供商的 Shadowsocks 服务器地址
-server_port：科学上网代理提供商的 Shadowsocks 服务器端口
+server：提供商的 Shadowsocks 服务器地址
+server_port：提供商的 Shadowsocks 服务器端口
 local_address：本地 Sock5 代理地址
 local_port：本地 Sock5 代理端口
-password：科学上网代理提供商的 Shadowsocks 连接密码
+password：提供商的 Shadowsocks 连接密码
 timeout：超时等待时间（秒）
 method：加密方式
 workers：工作线程数
@@ -74,9 +74,24 @@ sudo systemctl stop shadowsocks.service
 
 curl --socks5 127.0.0.1:10808 https://httpbin.org/ip
 
+安装privoxy
+修改privoxy配置
+文件：/etc/privoxy/config，增加一下内容
+forward-socks5t / 127.0.0.1:1080 .
+启动privoxy服务
+systemctl enable privoxy
+systemctl start privoxy
+修改/etc/profile
+export http_proxy=http://127.0.0.1:8118
+export https_proxy=http://127.0.0.1:8118
+使profile生效
+source /etc/profile
+验证privoxy
+curl www.google.com
+
+# 不需要
 export http_proxy=http://127.0.0.1:10808
 export https_proxy=http://127.0.0.1:10808
-
 export http_proxy=socks5://127.0.0.1:10808
 export https_proxy=socks5://127.0.0.1:10808
 ```
